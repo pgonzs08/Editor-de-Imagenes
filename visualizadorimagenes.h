@@ -17,5 +17,10 @@ public:
 
 private:
     Ui::VisualizadorImagenes *ui;
+
+private slots:
+
+    void abrir_imagen();
+
 };
 #endif // VISUALIZADORIMAGENES_H
