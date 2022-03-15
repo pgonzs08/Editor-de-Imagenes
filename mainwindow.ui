@@ -7,14 +7,143 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>386</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>781</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="botonAl">
+         <property name="text">
+          <string>Algoritmo</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="infoAl">
+         <property name="maximumSize">
+          <size>
+           <width>241</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Éste es el algoritmo que vamos a preparar.</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="tExAl">
+         <property name="text">
+          <string>Tiempo de ejecucuión: </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QPushButton" name="botonVI">
+         <property name="text">
+          <string>Visualizador de Imágenes</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="infoVI">
+         <property name="maximumSize">
+          <size>
+           <width>241</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Éste es el visualizador de imágenes.  Al pulsar el botón,  se abrirá un menú que te permitira seleccionar una imágen a editar y un directorio en el que guardar los cambios.</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="tExVI">
+         <property name="text">
+          <string>Tiempo de ejecucuión: </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuLab_Assignment3">
+    <property name="title">
+     <string>Lab_Assignment3</string>
+    </property>
+   </widget>
+   <addaction name="menuLab_Assignment3"/>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
