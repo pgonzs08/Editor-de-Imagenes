@@ -11,14 +11,17 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    ruidogaussiano.cpp \
     visualizadorimagenes.cpp
 
 HEADERS += \
     mainwindow.h \
+    ruidogaussiano.h \
     visualizadorimagenes.h
 
 FORMS += \
     mainwindow.ui \
+    ruidogaussiano.ui \
     visualizadorimagenes.ui
 
 # Default rules for deployment.

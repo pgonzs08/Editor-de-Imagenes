@@ -7,9 +7,9 @@ VisualizadorImagenes::VisualizadorImagenes(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QMenu* menuAbrir = ui->menubar->addMenu("Abrir...");
+    //QMenu* menuAbrir = ui->menubar->addMenu("Abrir...");
 
-    menuAbrir->addAction("Imagen", this , SLOT(abrir_imagen()));
+    //menuAbrir->addAction("Imagen", this , SLOT(abrir_imagen()));
 
 }
 
