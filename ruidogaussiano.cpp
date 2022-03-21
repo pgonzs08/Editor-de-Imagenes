@@ -44,7 +44,7 @@ void RuidoGaussiano::on_pushButton_3_clicked()
 
             std::vector<int> iteracion = algoritmoRuido();
 
-            for(int k = 0; k < iteracion.end(); k++){
+            for(int k = 0; k < iteracion.size(); k++){
 
                 msg.append(QString::fromStdString(std::to_string(iteracion.at(k))));
                 msg.append(" ");
