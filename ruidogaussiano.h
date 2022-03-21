@@ -17,12 +17,16 @@ public:
     explicit RuidoGaussiano(QWidget *parent = nullptr);
     ~RuidoGaussiano();
 
+    std::vector<int> algoritmoRuido();
+
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::RuidoGaussiano *ui;
-    QFile file;
+    QStringList filepaths;
 };
 
 #endif // RUIDOGAUSSIANO_H

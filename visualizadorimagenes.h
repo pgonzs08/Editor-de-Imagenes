@@ -2,6 +2,8 @@
 #define VISUALIZADORIMAGENES_H
 
 #include <QMainWindow>
+#include <QFileDialog>
+#include <QFile>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class VisualizadorImagenes; }
