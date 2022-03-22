@@ -1,6 +1,8 @@
 #include "ruidogaussiano.h"
 #include "ui_ruidogaussiano.h"
 
+#include <iostream>
+
 RuidoGaussiano::RuidoGaussiano(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::RuidoGaussiano)
@@ -15,46 +17,44 @@ RuidoGaussiano::~RuidoGaussiano()
 
 void RuidoGaussiano::on_pushButton_clicked()
 {
-    QFileDialog choose;
-    choose.setAcceptMode(QFileDialog::AcceptOpen);
-    choose.setFileMode(QFileDialog::AnyFile);
-    choose.exec();
-
-    if(choose.selectedFiles().size()>0){
-        filepaths = choose.selectedFiles();
-        ui->pushButton->setEnabled(false);
-        ui->pushButton_2->setEnabled(true);
-    }
+    filepaths = QFileDialog::getOpenFileNames(this, "Selecciona uno o más archivos que abrir", "/home", "Texto (*.txt)" );
+    ui->pushButton->setEnabled(false);
+    ui->pushButton_2->setEnabled(true);
     QString texto = "Se han seleccionado ";
     texto.append(QString::fromStdString(std::to_string(filepaths.size())));
     texto.append(" archivos.");
     ui->label->setText(texto);
 }
 
-void RuidoGaussiano::on_pushButton_3_clicked()
+void RuidoGaussiano::on_pushButton_2_clicked()
 {
 
-    for(int i = 0; i < ui->nIteraciones->value(); i++){
+    for(int j = 0; j < filepaths.size();j++){
 
-        for(int j = 0; j < filepaths.size();j++){
+        std::cout<<filepaths.at(j).toStdString()<<std::endl;
+        QFile file(filepaths.at(j));
 
-            QFile file(filepaths.at(j));
+        QString msg;
 
-            QString msg;
+        for(int i = 0; i < ui->nIteraciones->value(); i++){
 
             std::vector<int> iteracion = algoritmoRuido();
 
             for(int k = 0; k < iteracion.size(); k++){
 
-                msg.append(QString::fromStdString(std::to_string(iteracion.at(k))));
-                msg.append(" ");
+                msg.append(QString::fromStdString(std::to_string(iteracion.at(k)))); msg.append(" ");
 
             }
 
-            file.open(stderr, QFile::WriteOnly);
-            //no se escribir file.write(msg, msg.length());
-            file.close();
+            msg.append("\n");
+
+
         }
+
+        file.open(QFile::WriteOnly);
+        file.write(msg.toLocal8Bit());
+
+        file.close();
 
     }
 
