@@ -45,8 +45,11 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetNoConstraint</enum>
+       </property>
        <item row="0" column="0">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="imagen">
          <property name="text">
           <string>Aquí podrás ver la(s) imágen(es) que abras y edites.</string>
          </property>

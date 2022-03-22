@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QFileDialog>
 #include <QFile>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class VisualizadorImagenes; }
@@ -18,11 +19,20 @@ public:
     ~VisualizadorImagenes();
 
 private:
+
     Ui::VisualizadorImagenes *ui;
+
+    QStringList imagenes;
+
+    void mostrarImagenes();
+
+    std::vector<QLabel*> labels;
 
 private slots:
 
     void abrir_imagen();
+
+    void aplicarRuido();
 
 };
 #endif // VISUALIZADORIMAGENES_H

@@ -46,7 +46,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QSpinBox" name="nIteraciones"/>
+       <widget class="QSpinBox" name="nIteraciones">
+        <property name="suffix">
+         <string/>
+        </property>
+        <property name="maximum">
+         <number>99999999</number>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
