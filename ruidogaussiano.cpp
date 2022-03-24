@@ -66,9 +66,9 @@ std::vector<int> RuidoGaussiano::algoritmoRuido(){
 
     int media;
 
-    r = arc4random()%512-256;
-    g = arc4random()%512-256;
-    b = arc4random()%512-256;
+    r = rand()%512-256;
+    g = rand()%512-256;
+    b = rand()%512-256;
 
     media = (r+g+b)/3;
 
