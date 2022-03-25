@@ -30,7 +30,7 @@ void MainWindow::on_botonAl_clicked()
 
 void MainWindow::on_EjecucionImages_clicked()
 {
-    for(int i=0; i<vi->executionTime.size();i++){
+    for(unsigned int i=0; i<vi->executionTime.size();i++){
         ui->tExVI->setText(ui->tExVI->text()+"\n *"+QString::number(vi->executionTime[i])+"ms");
 
     }
