@@ -37,9 +37,9 @@ private:
 private slots:
 
     void abrir_imagen();
-    void  guardar_imagen();
+    void guardar_imagen();
     void guardarComo_imagen();
-
+    void abrirDemo();
     void aplicarRuido();
 
 };

@@ -19,6 +19,8 @@ public:
 
     std::vector<int> algoritmoRuido();
 
+    std::vector<float> executionTime;
+
 private slots:
     void on_pushButton_clicked();
 

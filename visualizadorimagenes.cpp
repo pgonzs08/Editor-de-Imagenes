@@ -1,6 +1,6 @@
 #include "visualizadorimagenes.h"
 #include "ui_visualizadorimagenes.h"
-#include <QTime>
+
 VisualizadorImagenes::VisualizadorImagenes(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::VisualizadorImagenes)
@@ -10,6 +10,7 @@ VisualizadorImagenes::VisualizadorImagenes(QWidget *parent)
     QMenu* menuAbrir = ui->menubar->addMenu("Archivo(s)");
 
     menuAbrir->addAction("Abrir...", this , SLOT(abrir_imagen()));
+    menuAbrir->addAction("Imagenes Demo", this , SLOT(abrirDemo()));
     menuAbrir->addAction("Guardar...", this , SLOT(guardar_imagen()));
     menuAbrir->addAction("Guardar como...", this , SLOT(guardarComo_imagen()));
 
@@ -31,7 +32,7 @@ VisualizadorImagenes::~VisualizadorImagenes()
 
 void VisualizadorImagenes::abrir_imagen(){
 
-    imagenes = QFileDialog::getOpenFileNames(this, "Escoge una o varias imagenes", "/home", "Images (*.jpg *.xpm *.png *.jpeg)");
+    imagenes = QFileDialog::getOpenFileNames(this, "Escoge una o varias imagenes", "./imagenes", "Images (*.jpg *.xpm *.png *.jpeg)");
 
     mostrarImagenes();
 
@@ -77,16 +78,32 @@ void VisualizadorImagenes::mostrarImagenes(){
 
 }
 
+void VisualizadorImagenes::abrirDemo(){
+
+    imagenes = QStringList();
+
+    imagenes.push_back(":/demo/imagenes/bicicleta.png");
+    imagenes.push_back(":/demo/imagenes/avion.png");
+    imagenes.push_back(":/demo/imagenes/triciclo.png");
+    imagenes.push_back(":/demo/imagenes/tren.png");
+    imagenes.push_back(":/demo/imagenes/coche.png");
+    imagenes.push_back(":/demo/imagenes/cochedeportivo.png");
+    imagenes.push_back(":/demo/imagenes/motocicleta.png");
+
+    mostrarImagenes();
+
+}
+
 void VisualizadorImagenes::aplicarRuido(){
     int ruido= QInputDialog::getInt(this, "Cantidad de ruido", "Ingrese un valor para el ruido gaussiano", 0, 0, 255,0);
 
     for(int i = 0; i < imagenes.length(); i++){
         QImage image;
-        int milisecondsPrincipio = std::time(nullptr);
+        QTime start = QTime::currentTime();
         bool valid =image.load(imagenes[i]);
 
         if(valid){
-            QMessageBox::information(this,"Loading","Procesando");
+            //QMessageBox::information(this,"Loading","Procesando");
             for(int i = 0; i< image.width(); i++){
                 for(int j = 0; j< image.height(); j++){
                     QColor color(image.pixel(i,j));
@@ -154,8 +171,8 @@ void VisualizadorImagenes::aplicarRuido(){
         }else{
             QMessageBox::warning(this,"Error","No se pudo cargar la imagen");;
         }
-        int nMillisecondsFin = std::time(nullptr);
-        int nMilliseconds = nMillisecondsFin-milisecondsPrincipio;
+        QTime end = QTime::currentTime();
+        int nMilliseconds = end.msecsSinceStartOfDay()-start.msecsSinceStartOfDay();
         this->executionTime.push_back(nMilliseconds);
 
     }

@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/demo">
+        <file>imagenes/avion.png</file>
+        <file>imagenes/bicicleta.png</file>
+        <file>imagenes/coche.png</file>
+        <file>imagenes/cochedeportivo.png</file>
+        <file>imagenes/motocicleta.png</file>
+        <file>imagenes/tren.png</file>
+        <file>imagenes/triciclo.png</file>
+    </qresource>
+</RCC>

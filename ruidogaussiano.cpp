@@ -62,6 +62,8 @@ void RuidoGaussiano::on_pushButton_2_clicked()
 
 std::vector<int> RuidoGaussiano::algoritmoRuido(){
 
+    QTime start = QTime::currentTime();
+
     int r, g, b;
 
     int media;
@@ -71,6 +73,10 @@ std::vector<int> RuidoGaussiano::algoritmoRuido(){
     b = rand()%512-256;
 
     media = (r+g+b)/3;
+
+    QTime end = QTime::currentTime();
+    int nMilliseconds = end.msecsSinceStartOfDay()-start.msecsSinceStartOfDay();
+    this->executionTime.push_back(nMilliseconds);
 
     return {r,g,b,media};
 
