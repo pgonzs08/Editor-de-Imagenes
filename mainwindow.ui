@@ -29,7 +29,7 @@
        <item>
         <widget class="QPushButton" name="botonAl">
          <property name="text">
-          <string>Algoritmo</string>
+          <string>Algoritmo Ruido Gaussiano</string>
          </property>
         </widget>
        </item>
@@ -42,7 +42,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Éste es el algoritmo que vamos a preparar.</string>
+          <string>Éste es un algoritmo que genera tres valores rgb aleatorios entre -256 y 255 y después calcula su media.  Los resultados de cada iteración deben escribirse en un archivo a elegir.</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -56,6 +56,13 @@
         <widget class="Line" name="line">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="EjecucionImages_2">
+         <property name="text">
+          <string>Cargar tiempos de ejecución</string>
          </property>
         </widget>
        </item>
@@ -99,7 +106,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Éste es el visualizador de imágenes.  Al pulsar el botón,  se abrirá un menú que te permitira seleccionar una imágen a editar y un directorio en el que guardar los cambios.</string>
+          <string>Éste es el visualizador de imágenes.  Al pulsar el botón,  deberá seleccionar una o varias imágenes a editar. Si lo desea,  puede seleccionar un directorio en el que guardar los cambios.</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -141,7 +148,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuLab_Assignment3">

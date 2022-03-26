@@ -25,6 +25,8 @@ private slots:
 
     void on_EjecucionImages_clicked();
 
+    void on_EjecucionImages_2_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

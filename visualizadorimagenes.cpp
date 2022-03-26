@@ -20,9 +20,6 @@ VisualizadorImagenes::VisualizadorImagenes(QWidget *parent)
 
     menuFiltros->addAction("Ruido Gaussiano", this , SLOT(aplicarRuido()));
 
-    //menuAbrir->addAction("Guardar...", this , SLOT(abrir_imagen()));
-    //menuAbrir->addAction("Guardar como...", this , SLOT(abrir_imagen()));
-
 }
 
 VisualizadorImagenes::~VisualizadorImagenes()
@@ -32,7 +29,7 @@ VisualizadorImagenes::~VisualizadorImagenes()
 
 void VisualizadorImagenes::abrir_imagen(){
 
-    imagenes = QFileDialog::getOpenFileNames(this, "Escoge una o varias imagenes", "./imagenes", "Images (*.jpg *.xpm *.png *.jpeg)");
+    imagenes = QFileDialog::getOpenFileNames(this, "Escoge una o varias imagenes", "/home", "Images (*.jpg *.xpm *.png *.jpeg)");
 
     mostrarImagenes();
 
