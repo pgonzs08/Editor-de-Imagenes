@@ -79,11 +79,10 @@ void VisualizadorImagenes::mostrarImagenes(){
 
 void VisualizadorImagenes::aplicarRuido(){
     int ruido= QInputDialog::getInt(this, "Cantidad de ruido", "Ingrese un valor para el ruido gaussiano", 0, 0, 255,0);
-    int milisecondsPrincipio = std::time(nullptr);
 
     for(int i = 0; i < imagenes.length(); i++){
         QImage image;
-
+        int milisecondsPrincipio = std::time(nullptr);
         bool valid =image.load(imagenes[i]);
 
         if(valid){
@@ -94,10 +93,20 @@ void VisualizadorImagenes::aplicarRuido(){
 
 
                     //Gauss
-                    int gaussRojo= rand()%ruido-ruido/2;
-                    int gaussVerde= rand()%ruido-ruido/2;
-                    int gaussAzul= rand()%ruido-ruido/2;
+                    int gaussRojo;
+                    int gaussVerde;
+                    int gaussAzul;
 
+                    if(ruido!=0){
+                        gaussRojo= rand()%ruido-ruido/2;
+                        gaussVerde= rand()%ruido-ruido/2;
+                        gaussAzul= rand()%ruido-ruido/2;
+                    }
+                    else{
+                        gaussRojo = 0;
+                        gaussVerde = 0;
+                        gaussAzul = 0;
+                    }
 
 
                     //Rojo
