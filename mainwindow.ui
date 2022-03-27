@@ -69,7 +69,7 @@
        <item>
         <widget class="QLabel" name="tExAl">
          <property name="text">
-          <string>Tiempo de ejecucuión: </string>
+          <string>Tiempo de ejecución: </string>
          </property>
         </widget>
        </item>
@@ -133,7 +133,7 @@
        <item>
         <widget class="QLabel" name="tExVI">
          <property name="text">
-          <string>Tiempo de ejecucuión: </string>
+          <string>Tiempo de ejecución: </string>
          </property>
         </widget>
        </item>

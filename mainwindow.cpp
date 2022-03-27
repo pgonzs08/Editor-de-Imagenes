@@ -30,6 +30,7 @@ void MainWindow::on_botonAl_clicked()
 
 void MainWindow::on_EjecucionImages_clicked()
 {
+    ui->tExVI->setText("Tiempo de ejecución:");
     for(unsigned int i=0; i<vi->executionTime.size();i++){
         ui->tExVI->setText(ui->tExVI->text()+"\n *"+QString::number(vi->executionTime[i])+"ms");
 
@@ -39,6 +40,7 @@ void MainWindow::on_EjecucionImages_clicked()
 
 void MainWindow::on_EjecucionImages_2_clicked()
 {
+    ui->tExAl->setText("Tiempo de ejecución:");
     for(unsigned int i=0; i<rg->executionTime.size();i++){
         ui->tExAl->setText(ui->tExAl->text()+"\n *"+QString::number(rg->executionTime[i])+"ms");
 
