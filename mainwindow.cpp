@@ -40,7 +40,7 @@ void MainWindow::on_EjecucionImages_clicked()
 void MainWindow::on_EjecucionImages_2_clicked()
 {
     for(unsigned int i=0; i<rg->executionTime.size();i++){
-        ui->tExAl->setText(ui->botonAl->text()+"\n *"+QString::number(rg->executionTime[i])+"ms");
+        ui->tExAl->setText(ui->tExAl->text()+"\n *"+QString::number(rg->executionTime[i])+"ms");
 
     }
 }
